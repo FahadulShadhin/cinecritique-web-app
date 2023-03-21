@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import logo from "../../logo.png";
 import styles from "./styles";
 
@@ -40,18 +41,21 @@ const Navbar = () => {
             : styles.nav_links_container_hidden
         }
       >
-        <a href="#" className={styles.nav_link}>
+        <NavLink to="/" className={styles.nav_link}>
           Home
-        </a>
+        </NavLink>
         <a href="#" className={styles.nav_link + " sm:ml-4"}>
           About
         </a>
         <a href="#" className={styles.nav_link + " sm:ml-4"}>
           Movies
         </a>
-        <a href="#" className={styles.nav_link + " sm:ml-4"}>
+        <NavLink to="/user/signin" className={styles.nav_link + " sm:ml-4"}>
           Sign In
-        </a>
+        </NavLink>
+        <NavLink to="/user/signup" className={styles.nav_link + " sm:ml-4"}>
+          Sign Up
+        </NavLink>
       </div>
     </header>
   );
