@@ -9,7 +9,7 @@ const styles = {
   nav_links_container: "px-2 pb-4 block sm:flex sm:p-0",
   nav_links_container_hidden: "px-2 pb-4 hidden sm:flex sm:p-0",
   nav_link:
-    "block px-2 py-1 sm:mt-0 text-white font-semibold rounded hover:bg-rainblue-50",
+    "block px-2 py-1 sm:mt-0 text-white capitalize font-semibold rounded hover:bg-rainblue-50",
 };
 
 export default styles;
