@@ -15,6 +15,9 @@ module.exports = {
         50: "#028c9e",
         100: "#028090",
       },
+      raingray: {
+        100: "#4E4E4E",
+      },
     },
   },
   plugins: [],

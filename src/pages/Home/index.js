@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "../../components";
+import { Navbar, Footer } from "../../components";
 
 const Home = () => {
   const isAuthenticate = () => {
@@ -9,12 +9,16 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-rainblue-100">
-      <Navbar isAuthenticate={isAuthenticate()} />
-      <section>
+    <>
+      <div className="bg-rainblue-100">
+        <Navbar isAuthenticate={isAuthenticate()} />
         <h1 className="p-20 text-center text-5xl text-white">Hero</h1>
-      </section>
-    </div>
+      </div>
+      <div>
+        <h1 className="p-6 text-center text-5xl">Latest movie list</h1>
+      </div>
+      <Footer />
+    </>
   );
 };
 

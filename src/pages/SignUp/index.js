@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./styles";
 import logo_invert from "../../logo_invert.png";
 import { publicPost } from "../../utilities/apiCaller";
+import { Footer } from "../../components";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -40,82 +41,85 @@ const SignUp = () => {
   };
 
   return (
-    <div className={styles.main_container}>
-      <NavLink to="/" className={styles.logo_a}>
-        <img src={logo_invert} className={styles.logo} />
-      </NavLink>
+    <>
+      <div className={styles.main_container}>
+        <NavLink to="/" className={styles.logo_a}>
+          <img src={logo_invert} className={styles.logo} />
+        </NavLink>
 
-      <div className={styles.form_container}>
-        <h1 className={styles.h1}>Create an account</h1>
+        <div className={styles.form_container}>
+          <h1 className={styles.h1}>Create an account</h1>
 
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name" className={styles.label}>
-            Your name
-          </label>
-          <input
-            className={styles.input}
-            type="text"
-            name="name"
-            placeholder="name"
-            required
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-          />
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="name" className={styles.label}>
+              Your name
+            </label>
+            <input
+              className={styles.input}
+              type="text"
+              name="name"
+              placeholder="name"
+              required
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
 
-          <label htmlFor="email" className={styles.label}>
-            Email
-          </label>
-          <input
-            className={styles.input}
-            type="email"
-            name="email"
-            placeholder="your@email.com"
-            required
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
+            <label htmlFor="email" className={styles.label}>
+              Email
+            </label>
+            <input
+              className={styles.input}
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
 
-          <label htmlFor="password" className={styles.label}>
-            Password
-          </label>
-          <input
-            className={styles.input}
-            type="password"
-            name="password"
-            placeholder="**********"
-            required
-            value={pass}
-            onChange={(event) => setPass(event.target.value)}
-          />
+            <label htmlFor="password" className={styles.label}>
+              Password
+            </label>
+            <input
+              className={styles.input}
+              type="password"
+              name="password"
+              placeholder="**********"
+              required
+              value={pass}
+              onChange={(event) => setPass(event.target.value)}
+            />
 
-          <label htmlFor="confirm-password" className={styles.label}>
-            Confirm password
-          </label>
-          <input
-            className={styles.input}
-            type="password"
-            name="confirm-password"
-            placeholder="**********"
-            required
-            value={confPass}
-            onChange={(event) => setConfPass(event.target.value)}
-          />
+            <label htmlFor="confirm-password" className={styles.label}>
+              Confirm password
+            </label>
+            <input
+              className={styles.input}
+              type="password"
+              name="confirm-password"
+              placeholder="**********"
+              required
+              value={confPass}
+              onChange={(event) => setConfPass(event.target.value)}
+            />
 
-          <p className={styles.alert}>{message}</p>
+            <p className={styles.alert}>{message}</p>
 
-          <button type="submit" className={styles.btn}>
-            Create an account
-          </button>
+            <button type="submit" className={styles.btn}>
+              Create an account
+            </button>
 
-          <p className={styles.p}>
-            Already have an account?{" "}
-            <NavLink to="/user/signin" className={styles.a}>
-              Login here
-            </NavLink>
-          </p>
-        </form>
+            <p className={styles.p}>
+              Already have an account?{" "}
+              <NavLink to="/user/signin" className={styles.a}>
+                Login here
+              </NavLink>
+            </p>
+          </form>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
