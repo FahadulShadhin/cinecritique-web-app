@@ -3,8 +3,9 @@ import { NavLink } from "react-router-dom";
 import logo from "../../logo.png";
 import styles from "./styles";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [showBurgerMenu, setShowBurgerMenu] = useState(true);
+  const handleLogoutClick = () => sessionStorage.removeItem("token");
 
   return (
     <header className={styles.nav_header}>
@@ -50,12 +51,20 @@ const Navbar = () => {
         <a href="#" className={styles.nav_link + " sm:ml-4"}>
           Movies
         </a>
-        <NavLink to="/user/signin" className={styles.nav_link + " sm:ml-4"}>
-          Sign In
-        </NavLink>
-        {/* <NavLink to="/user/signup" className={styles.nav_link + " sm:ml-4"}>
-          Sign Up
-        </NavLink> */}
+
+        {props.isAuthenticate ? (
+          <NavLink
+            to="/user/signin"
+            className={styles.nav_link + " sm:ml-4"}
+            onClick={handleLogoutClick}
+          >
+            Log out
+          </NavLink>
+        ) : (
+          <NavLink to="/user/signin" className={styles.nav_link + " sm:ml-4"}>
+            Sign in
+          </NavLink>
+        )}
       </div>
     </header>
   );
