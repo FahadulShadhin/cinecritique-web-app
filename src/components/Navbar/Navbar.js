@@ -53,9 +53,9 @@ const Navbar = () => {
         <NavLink to="/user/signin" className={styles.nav_link + " sm:ml-4"}>
           Sign In
         </NavLink>
-        <NavLink to="/user/signup" className={styles.nav_link + " sm:ml-4"}>
+        {/* <NavLink to="/user/signup" className={styles.nav_link + " sm:ml-4"}>
           Sign Up
-        </NavLink>
+        </NavLink> */}
       </div>
     </header>
   );

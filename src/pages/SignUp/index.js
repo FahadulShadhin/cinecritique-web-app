@@ -32,9 +32,7 @@ const SignUp = () => {
         setMessage(response.message);
         navigteTo("/user/signin");
       } else {
-        throw {
-          message: "Please try again.",
-        };
+        setMessage("Please try again.");
       }
     } catch (err) {
       setMessage(err.message);
@@ -57,7 +55,7 @@ const SignUp = () => {
           <input
             className={styles.input}
             type="text"
-            name="email"
+            name="name"
             placeholder="name"
             required
             value={name}
