@@ -3,9 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import logo_invert from "../../logo_invert.png";
 import styles from "./styles";
 import { publicPost } from "../../utilities/apiCaller";
-import { Footer } from "../../components";
-import Backdrop from "@mui/material/Backdrop";
-import CircularProgress from "@mui/material/CircularProgress";
+import { Footer, Loader } from "../../components";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -14,7 +12,6 @@ const SignUp = () => {
   const [confPass, setConfPass] = useState("");
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(false);
-  const handleClose = () => setOpen(false);
   const handleToggle = () => setOpen(!open);
   const navigteTo = useNavigate();
 
@@ -23,6 +20,7 @@ const SignUp = () => {
 
     try {
       if (pass !== confPass) {
+        setOpen(false);
         setMessage("Password didn't match");
         return;
       }
@@ -35,12 +33,15 @@ const SignUp = () => {
         })
       );
       if (response.userId) {
+        setOpen(false);
         setMessage(response.message);
         navigteTo("/user/signin");
       } else {
+        setOpen(false);
         setMessage("Please try again.");
       }
     } catch (err) {
+      setOpen(false);
       setMessage(err.message);
     }
   };
@@ -118,16 +119,7 @@ const SignUp = () => {
               >
                 Create an account
               </button>
-              <Backdrop
-                sx={{
-                  color: "#fff",
-                  zIndex: (theme) => theme.zIndex.drawer + 1,
-                }}
-                open={open}
-                onClick={handleClose}
-              >
-                <CircularProgress color="inherit" />
-              </Backdrop>
+              <Loader open={open} setOpen={setOpen} />
             </div>
 
             <p className={styles.p}>

@@ -3,16 +3,13 @@ import { NavLink, useNavigate } from "react-router-dom";
 import logo_invert from "../../logo_invert.png";
 import styles from "../SignUp/styles";
 import { publicPost } from "../../utilities/apiCaller";
-import { Footer } from "../../components";
-import Backdrop from "@mui/material/Backdrop";
-import CircularProgress from "@mui/material/CircularProgress";
+import { Footer, Loader } from "../../components";
 
 const SignIn = () => {
   const [name, setName] = useState("");
   const [pass, setPass] = useState("");
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(false);
-  const handleClose = () => setOpen(false);
   const handleToggle = () => setOpen(!open);
   const navigteTo = useNavigate();
 
@@ -92,16 +89,7 @@ const SignIn = () => {
               >
                 Sign in
               </button>
-              <Backdrop
-                sx={{
-                  color: "#fff",
-                  zIndex: (theme) => theme.zIndex.drawer + 1,
-                }}
-                open={open}
-                onClick={handleClose}
-              >
-                <CircularProgress color="inherit" />
-              </Backdrop>
+              <Loader open={open} setOpen={setOpen} />
             </div>
 
             <p className={styles.p}>
