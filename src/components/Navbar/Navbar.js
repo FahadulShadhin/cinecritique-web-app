@@ -7,6 +7,8 @@ const Navbar = (props) => {
   const handleLogoutClick = () => sessionStorage.removeItem("token");
   const logoUrl = "http://localhost:3000/logo.png";
 
+  // console.log(window.location.pathname);
+
   return (
     <header className={styles.nav_header}>
       <div className={styles.nav_logo_container}>
