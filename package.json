@@ -1,13 +1,13 @@
 {
+  "homepage": "http://FahadulShadhin.github.io/cinecritique-web-app",
   "name": "squad-web-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://FahadulShadhin.github.io/cinecritique-web-app",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.{js,ts,tsx,html,scss,css,json}\"",
