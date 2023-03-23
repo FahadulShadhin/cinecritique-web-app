@@ -3,7 +3,9 @@ import { NavLink, useNavigate } from "react-router-dom";
 import logo_invert from "../../logo_invert.png";
 import styles from "./styles";
 import { publicPost } from "../../utilities/apiCaller";
-import { Footer, Loader } from "../../components";
+import { Footer } from "../../components";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -45,8 +47,6 @@ const SignUp = () => {
 
   return (
     <>
-      <Loader open={open} onClick={handleClose} />
-
       <div className={styles.main_container}>
         <NavLink to="/" className={styles.logo_a}>
           <img src={logo_invert} className={styles.logo} />
@@ -110,9 +110,25 @@ const SignUp = () => {
 
             <p className={styles.alert}>{message}</p>
 
-            <button type="submit" className={styles.btn} onClick={handleToggle}>
-              Create an account
-            </button>
+            <div>
+              <button
+                type="submit"
+                className={styles.btn}
+                onClick={handleToggle}
+              >
+                Create an account
+              </button>
+              <Backdrop
+                sx={{
+                  color: "#fff",
+                  zIndex: (theme) => theme.zIndex.drawer + 1,
+                }}
+                open={open}
+                onClick={handleClose}
+              >
+                <CircularProgress color="inherit" />
+              </Backdrop>
+            </div>
 
             <p className={styles.p}>
               Already have an account?{" "}
