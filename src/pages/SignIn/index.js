@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import styles from "../SignUp/styles";
 import { publicPost } from "../../utilities/apiCaller";
