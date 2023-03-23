@@ -48,18 +48,21 @@ const Navbar = (props) => {
         <a href="#" className={styles.nav_link + " sm:ml-4"}>
           About
         </a>
-        <a href="#" className={styles.nav_link + " sm:ml-4"}>
-          Movies
-        </a>
 
         {props.isAuthenticate ? (
-          <NavLink
-            to="/user/signin"
-            className={styles.nav_link + " sm:ml-4"}
-            onClick={handleLogoutClick}
-          >
-            Log out
-          </NavLink>
+          <>
+            <NavLink to="/movies" className={styles.nav_link + " sm:ml-4"}>
+              Movies
+            </NavLink>
+
+            <NavLink
+              to="/user/signin"
+              className={styles.nav_link + " sm:ml-4"}
+              onClick={handleLogoutClick}
+            >
+              Log out
+            </NavLink>
+          </>
         ) : (
           <NavLink to="/user/signin" className={styles.nav_link + " sm:ml-4"}>
             Sign in
