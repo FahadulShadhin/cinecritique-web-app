@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import logo_invert from "../../logo_invert.png";
 import styles from "./styles";
 import { publicPost } from "../../utilities/apiCaller";
-import { Footer } from "../../components";
+import { Footer, Loader } from "../../components";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -11,6 +11,9 @@ const SignUp = () => {
   const [pass, setPass] = useState("");
   const [confPass, setConfPass] = useState("");
   const [message, setMessage] = useState("");
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
+  const handleToggle = () => setOpen(!open);
   const navigteTo = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -42,6 +45,8 @@ const SignUp = () => {
 
   return (
     <>
+      <Loader open={open} onClick={handleClose} />
+
       <div className={styles.main_container}>
         <NavLink to="/" className={styles.logo_a}>
           <img src={logo_invert} className={styles.logo} />
@@ -105,7 +110,7 @@ const SignUp = () => {
 
             <p className={styles.alert}>{message}</p>
 
-            <button type="submit" className={styles.btn}>
+            <button type="submit" className={styles.btn} onClick={handleToggle}>
               Create an account
             </button>
 
