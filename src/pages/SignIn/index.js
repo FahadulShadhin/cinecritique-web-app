@@ -29,9 +29,11 @@ const SignIn = () => {
         sessionStorage.setItem("token", JSON.stringify(response.token));
         navigteTo("/");
       } else {
+        setOpen(false);
         setMessage("Please try again.");
       }
     } catch (err) {
+      setOpen(false);
       setMessage(err.message);
     }
   };
