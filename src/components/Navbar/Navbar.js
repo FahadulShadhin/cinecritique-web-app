@@ -1,19 +1,17 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../../logo.png";
 import styles from "./styles";
 
 const Navbar = (props) => {
   const [showBurgerMenu, setShowBurgerMenu] = useState(true);
   const handleLogoutClick = () => sessionStorage.removeItem("token");
-  const logoUrl = "http://localhost:3000/logo.png";
-
-  // console.log(window.location.pathname);
 
   return (
     <header className={styles.nav_header}>
       <div className={styles.nav_logo_container}>
         <div>
-          <img className={styles.nav_logo} src={logoUrl} />
+          <img className={styles.nav_logo} src={logo} />
         </div>
         <div>
           <button

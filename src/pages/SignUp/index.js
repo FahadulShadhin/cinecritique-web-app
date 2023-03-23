@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import logo_invert from "../../logo_invert.png";
 import styles from "./styles";
 import { publicPost } from "../../utilities/apiCaller";
 import { Footer } from "../../components";
@@ -44,7 +45,7 @@ const SignUp = () => {
     <>
       <div className={styles.main_container}>
         <NavLink to="/" className={styles.logo_a}>
-          <img src={logoInvertUrl} className={styles.logo} />
+          <img src={logo_invert} className={styles.logo} />
         </NavLink>
 
         <div className={styles.form_container}>
