@@ -14,9 +14,6 @@ const Home = () => {
         <Navbar isAuthenticate={isAuthenticate()} />
         <h1 className="p-20 text-center text-5xl text-white">Hero</h1>
       </div>
-      <div>
-        <h1 className="p-6 text-center text-5xl">Latest movie list</h1>
-      </div>
       <Footer />
     </>
   );
