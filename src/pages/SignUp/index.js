@@ -18,12 +18,18 @@ const SignUp = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (pass !== confPass) {
+      setOpen(false);
+      setMessage("Password didn't match");
+      return;
+    }
+    if (pass.length < 8) {
+      setOpen(false);
+      setMessage("Password should contain at least 8 characters");
+      return;
+    }
+
     try {
-      if (pass !== confPass) {
-        setOpen(false);
-        setMessage("Password didn't match");
-        return;
-      }
       const response = await publicPost(
         "/user/signup",
         JSON.stringify({
@@ -33,7 +39,6 @@ const SignUp = () => {
         })
       );
       if (response.userId) {
-        setOpen(false);
         setMessage(response.message);
         navigteTo("/user/signin");
       } else {
