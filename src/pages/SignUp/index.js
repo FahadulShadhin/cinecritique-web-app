@@ -11,7 +11,6 @@ const SignUp = () => {
   const [pass, setPass] = useState("");
   const [confPass, setConfPass] = useState("");
   const [message, setMessage] = useState("");
-  const logoInvertUrl = "http://localhost:3000/logo_invert.png";
   const navigteTo = useNavigate();
 
   const handleSubmit = async (event) => {
