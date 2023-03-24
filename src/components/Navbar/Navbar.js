@@ -49,12 +49,12 @@ const Navbar = (props) => {
           About
         </a>
 
+        <NavLink to="/movies" className={styles.nav_link + " sm:ml-4"}>
+          Movies
+        </NavLink>
+
         {props.isAuthenticate ? (
           <>
-            <NavLink to="/movies" className={styles.nav_link + " sm:ml-4"}>
-              Movies
-            </NavLink>
-
             <NavLink
               to="/user/signin"
               className={styles.nav_link + " sm:ml-4"}

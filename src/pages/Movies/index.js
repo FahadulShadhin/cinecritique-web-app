@@ -7,11 +7,12 @@ import { checkAuthenticate } from "../../utilities";
 const Movies = () => {
   const [movieName, setMovieName] = useState("");
   const [data, setData] = useState(null);
-  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      setLoading(true);
       const response = await publicGet("/movie/name/" + movieName);
       if (response.data.status === 200) {
         setData(response.data.data);
@@ -19,7 +20,7 @@ const Movies = () => {
     } catch (err) {
       alert("Not found!");
     }
-    return 0;
+    setLoading(false);
   };
 
   return (
@@ -78,6 +79,12 @@ const Movies = () => {
           </button>
         </form>
       </div>
+
+      {loading ? (
+        <p className="pb-6 text-center text-rainblue-100">Please wait...</p>
+      ) : (
+        <></>
+      )}
 
       <div className="flex items-center justify-center">
         {data && <MovieCard data={data} />}

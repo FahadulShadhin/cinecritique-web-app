@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <div className="bg-rainblue-100">
         <Navbar isAuthenticate={checkAuthenticate()} />
-        <h1 className="p-20 text-center text-5xl text-white">Hero</h1>
+        <h1 className="p-20 text-center text-5xl text-white">Home</h1>
       </div>
       <Footer />
     </>
