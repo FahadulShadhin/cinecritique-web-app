@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/cinecritique-web-app/static/css/main.3965d16e.css",
-    "main.js": "/cinecritique-web-app/static/js/main.a17cecab.js",
+    "main.css": "/cinecritique-web-app/static/css/main.6b78550e.css",
+    "main.js": "/cinecritique-web-app/static/js/main.f7bef252.js",
     "static/js/787.70011376.chunk.js": "/cinecritique-web-app/static/js/787.70011376.chunk.js",
     "index.html": "/cinecritique-web-app/index.html",
-    "main.3965d16e.css.map": "/cinecritique-web-app/static/css/main.3965d16e.css.map",
-    "main.a17cecab.js.map": "/cinecritique-web-app/static/js/main.a17cecab.js.map",
+    "main.6b78550e.css.map": "/cinecritique-web-app/static/css/main.6b78550e.css.map",
+    "main.f7bef252.js.map": "/cinecritique-web-app/static/js/main.f7bef252.js.map",
     "787.70011376.chunk.js.map": "/cinecritique-web-app/static/js/787.70011376.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3965d16e.css",
-    "static/js/main.a17cecab.js"
+    "static/css/main.6b78550e.css",
+    "static/js/main.f7bef252.js"
   ]
 }
